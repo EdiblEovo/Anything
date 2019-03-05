@@ -42,11 +42,12 @@ pylab.rcParams['figure.figsize'] = 20, 12
 
 # In[ ]:
 
-
+# 使用的配置文件
 config_file = "../configs/e2e_mask_rcnn_R_101_FPN_1x.yaml"
 
 # update the config options with the config file
 cfg.merge_from_file(config_file)
+# 使用的模型权重
 cfg.MODEL.WEIGHT = '../output/model_final.pth'
 # manual override some options
 cfg.merge_from_list(["MODEL.DEVICE", "cpu"])
@@ -78,7 +79,7 @@ def imshow(img):
 
 # In[ ]:
 
-
+# 测试图片目录
 val_path='../datasets/coco/test/' #this is the validation image data
 imglistval = listdir(val_path) 
 for name in imglistval:
