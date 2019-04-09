@@ -38,7 +38,7 @@ class labelme2coco(object):
                 self.images.append(self.image(data,num))
                 for shapes in data['shapes']:
                     #label=shapes['label'].split('_')
-                    label=shapes['label'][:-1]
+                    label=shapes['label'][:-1]  #去除后面1位作为类名（例：apple1 -> apple）
                     print(shapes['label'])
                     print(label)
                     if label not in self.label:
